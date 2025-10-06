@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="mb-0">Recetas</h1>
+  <%= link_to "Nueva Receta", new_recipe_path, class: "btn btn-primary" %>
+</div>
+
+<% if @recipes.any? %>
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= recipe.title %></h5>
+            <p class="mb-1"><strong>Tiempo:</strong> <%= recipe.cook_time %> min</p>
+            <p class="mb-0"><strong>Dificultad:</strong> <%= recipe.difficulty %></p>
+          </div>
+          <div class="card-footer d-flex gap-2">
+            <%= link_to "Ver", recipe, class: "btn btn-sm btn-outline-primary" %>
+            <%= link_to "Editar", edit_recipe_path(recipe), class: "btn btn-sm btn-outline-secondary" %>
+            <%= button_to "Eliminar", recipe, method: :delete, data: { turbo_confirm: "¿Seguro?" }, class: "btn btn-sm btn-outline-danger" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="alert alert-info">No hay recetas. <%= link_to "Crear una", new_recipe_path %>.</div>
+<% end %>
