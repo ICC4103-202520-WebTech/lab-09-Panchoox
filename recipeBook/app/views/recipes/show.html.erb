@@ -1,0 +1,24 @@
+<div class="mb-3">
+  <%= link_to "← Volver", recipes_path, class: "btn btn-sm btn-outline-secondary" %>
+</div>
+
+<div class="card">
+  <div class="card-header bg-primary text-white">
+    <h2 class="mb-0"><%= @recipe.title %></h2>
+  </div>
+  <div class="card-body">
+    <p><strong>Tiempo:</strong> <%= @recipe.cook_time %> min</p>
+    <p><strong>Dificultad:</strong> <%= @recipe.difficulty %></p>
+    <hr>
+    <h5>Instrucciones</h5>
+    <div class="border rounded p-3 bg-light trix-content">
+      <%= @recipe.instructions %>
+    </div>
+  </div>
+  <div class="card-footer d-flex gap-2">
+    <%= link_to "Editar", edit_recipe_path(@recipe), class: "btn btn-warning" %>
+    <%= button_to "Eliminar", @recipe, method: :delete,
+          data: { turbo_confirm: "¿Eliminar?" },
+          class: "btn btn-danger" %>
+  </div>
+</div>

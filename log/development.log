@@ -1,0 +1,62 @@
+Started GET "/recipes/new" for 127.0.0.1 at 2025-10-06 13:18:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 49.1ms | GC: 0.0ms)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 49.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | GC: 6.0ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 12.7ms (0 queries, 0 cached) | GC: 8.0ms)
+
+
+  
+ActionView::Template::Error (The asset 'application.css' was not found in the load path.)
+Caused by: Propshaft::MissingAssetError (The asset 'application.css' was not found in the load path.)
+
+Information for: ActionView::Template::Error (The asset 'application.css' was not found in the load path.):
+    15: 
+    16:     <%= yield :head %>
+    17: 
+    18:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    19:     <%= javascript_importmap_tags %>
+    20:   </head>
+    21: 
+  
+app/views/layouts/application.html.erb:18
+
+Information for cause: Propshaft::MissingAssetError (The asset 'application.css' was not found in the load path.):
+  
+app/views/layouts/application.html.erb:18
+Started GET "/recipes/new" for 127.0.0.1 at 2025-10-06 13:21:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 29.1ms | GC: 0.5ms)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 29.8ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | GC: 0.5ms)
+Completed 200 OK in 105ms (Views: 51.1ms | ActiveRecord: 9.7ms (0 queries, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-06 13:21:21 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 13.2ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-10-06 13:21:23 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 3.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
