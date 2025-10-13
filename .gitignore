@@ -1,0 +1,75 @@
+# See https://help.github.com/articles/ignoring-files for more about ignoring files.
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all environment files.
+/.env*
+!/.env.example
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+!/tmp/pids/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/.keep
+
+# Ignore storage (uploaded files in development and any SQLite databases).
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/.keep
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore public assets.
+/public/assets
+/public/packs
+/public/packs-test
+
+# Ignore node modules
+/node_modules
+
+# Ignore yarn files
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Ignore precompiled JavaScript packs
+/public/packs
+/public/packs-test
+
+# Ignore uploaded files in development
+/storage
+
+# Ignore Byebug command history file.
+.byebug_history
+
+# Ignore Spring files.
+/spring/*.pid
+
+# Ignore database files
+*.sqlite3
+*.sqlite3-*
+
+# Ignore Redis dump file
+dump.rdb
+
+# Ignore Zone.Identifier files (Windows WSL metadata)
+*:Zone.Identifier
+*.Zone.Identifier
+
+# Ignore Mac files
+.DS_Store
+
+# Ignore editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
