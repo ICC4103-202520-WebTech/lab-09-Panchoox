@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
     has_rich_text :instructions
+    belongs_to :user
     
     validates :title, presence: true
     validates :cook_time, presence: true, numericality: { greater_than: 0 }
