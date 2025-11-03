@@ -32,8 +32,10 @@
     </div>
   </div>
   <div class="card-footer d-flex gap-2">
-    <% if user_signed_in? && current_user == @recipe.user %>
+    <% if can?(:update, @recipe) %>
       <%= link_to "Editar", edit_recipe_path(@recipe), class: "btn btn-warning" %>
+    <% end %>
+    <% if can?(:destroy, @recipe) %>
       <%= button_to "Eliminar", @recipe, method: :delete,
             data: { turbo_confirm: "¿Estás seguro?" },
             class: "btn btn-danger" %>

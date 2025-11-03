@@ -25,6 +25,9 @@ gem "jbuilder"
 # Authentication solution for Rails based on Warden [https://github.com/heartcombo/devise]
 gem 'devise'
 
+# Authorization
+gem 'cancancan', '~> 3.3'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 

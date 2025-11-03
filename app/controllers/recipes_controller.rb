@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show] ##autentica el user en toods menos en index y show
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
 
   def index
     @recipes = Recipe.all
@@ -50,16 +49,6 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:title, :cook_time, :difficulty, :instructions)
   end
   
-  def authorize_user! ## el ! significa que este metodo tiene un efecto secundario osea el redirect_to en este caso
-    unless @recipe.user == current_user
-      redirect_to recipes_path, alert: "No tienes permiso para esto"
-  
-    end
-  end
+  # authorization handled by CanCanCan (Ability)
 
-  protected
-  def config_permited_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
-  end
 end

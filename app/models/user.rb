@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :recipes, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 2, maximum: 50 }
+
+  enum :role, { regular: 0, admin: 1}, prefix: true
 end

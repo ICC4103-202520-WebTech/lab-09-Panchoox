@@ -1601,3 +1601,1283 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 23ms (Views: 9.1ms | ActiveRecord: 1.8ms (3 queries, 0 cached) | GC: 0.8ms)
 
 
+Started GET "/" for ::1 at 2025-10-20 18:42:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 49.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 85.9ms | GC: 0.0ms)
+Completed 200 OK in 108ms (Views: 74.0ms | ActiveRecord: 14.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-10-20 18:42:44 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2025-10-20 18:42:53 -0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Pedro Lopez", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrarse"}
+[31mUnpermitted parameter: :name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f96215f5fa0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Pedro Lopez", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrarse", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'pedro@test.cl' LIMIT 1 /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 227ms (Views: 6.0ms | ActiveRecord: 3.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-10-20 18:42:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 18:42:59 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 5.0ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/recipes/3" for ::1 at 2025-10-20 18:43:00 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/controllers/recipes_controller.rb:46:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.7ms | GC: 0.0ms)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 28.7ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | GC: 1.9ms)
+Completed 200 OK in 40ms (Views: 27.9ms | ActiveRecord: 3.6ms (3 queries, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/recipes/3" for ::1 at 2025-10-20 18:43:00 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/controllers/recipes_controller.rb:46:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | GC: 0.0ms)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 4.8ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='RecipeBook'*/[0m
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'cli_test@example.com' LIMIT 1 /*application='RecipeBook'*/[0m
+  [1m[36mUser Create (9.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "role") VALUES ('cli_test@example.com', '$2a$12$.ETRILVExPBvaxbzxvTJ/eOPQYblU5Gzb.Bgu80tGQBsYx.vvJwV.', NULL, NULL, NULL, '2025-10-20 21:47:30.891800', '2025-10-20 21:47:30.891800', 'CLI Test', 'regular') RETURNING "id" /*application='RecipeBook'*/[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT /*application='RecipeBook'*/[0m
+Started GET "/users/sign_up" for ::1 at 2025-10-20 18:48:12 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.9ms)
+Completed 200 OK in 71ms (Views: 9.3ms | ActiveRecord: 4.9ms (0 queries, 0 cached) | GC: 42.2ms)
+
+
+Started POST "/users" for ::1 at 2025-10-20 18:48:22 -0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Pedro Lopez", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrarse"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'pedro@test.cl' LIMIT 1 /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "role") VALUES ('pedro@test.cl', '$2a$12$Sk4Eg0RAUEB.OsTxzV3V/.F.JDG0.zXRol9MOVX65JhmcTDKkIET6', NULL, NULL, NULL, '2025-10-20 21:48:22.518590', '2025-10-20 21:48:22.518590', 'Pedro Lopez', 'regular') RETURNING "id" /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT /*action='create',application='RecipeBook',controller='registrations'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 191ms (ActiveRecord: 5.9ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 18:48:22 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 10.3ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | GC: 0.4ms)
+Completed 200 OK in 21ms (Views: 9.9ms | ActiveRecord: 2.5ms (4 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/recipes/new" for ::1 at 2025-10-20 18:48:49 -0300
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 10.2ms | GC: 0.4ms)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 11.3ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.4ms)
+Completed 200 OK in 24ms (Views: 12.7ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 18:48:49 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 1.2ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/recipes/3" for ::1 at 2025-10-20 18:48:50 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/controllers/recipes_controller.rb:46:in `set_recipe'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.9ms | GC: 0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:35
+  Rendered recipes/show.html.erb within layouts/application (Duration: 9.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | GC: 0.5ms)
+Completed 200 OK in 20ms (Views: 9.9ms | ActiveRecord: 1.9ms (4 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 18:48:52 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 1.4ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 18:49:13 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 18:49:15 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.4ms)
+Completed 200 OK in 14ms (Views: 6.1ms | ActiveRecord: 1.3ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/?id=3f389285-b7a7-4afc-8902-8d2b8824639a&vscodeBrowserReqId=1760996993969" for 127.0.0.1 at 2025-10-20 18:49:54 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+Processing by RecipesController#index as HTML
+  Parameters: {"id"=>"3f389285-b7a7-4afc-8902-8d2b8824639a", "vscodeBrowserReqId"=>"1760996993969"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 38.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 64.9ms | GC: 0.0ms)
+Completed 200 OK in 90ms (Views: 54.6ms | ActiveRecord: 12.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 18:49:59 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 8.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 9.0ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipies?id=3f389285-b7a7-4afc-8902-8d2b8824639a&vscodeBrowserReqId=1760997006538" for 127.0.0.1 at 2025-10-20 18:50:06 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/recipies"):
+  
+Started GET "/recipes?id=3f389285-b7a7-4afc-8902-8d2b8824639a&vscodeBrowserReqId=1760997009229" for 127.0.0.1 at 2025-10-20 18:50:09 -0300
+Processing by RecipesController#index as HTML
+  Parameters: {"id"=>"3f389285-b7a7-4afc-8902-8d2b8824639a", "vscodeBrowserReqId"=>"1760997009229"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes?id=3f389285-b7a7-4afc-8902-8d2b8824639a&vscodeBrowserReqId=1760997013744" for ::1 at 2025-10-20 18:50:13 -0300
+Processing by RecipesController#index as HTML
+  Parameters: {"id"=>"3f389285-b7a7-4afc-8902-8d2b8824639a", "vscodeBrowserReqId"=>"1760997013744"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.1ms)
+Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 18:50:21 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.2ms)
+Completed 200 OK in 16ms (Views: 7.6ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2025-10-20 18:50:22 -0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 12ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 18:50:22 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.1ms)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-10-20 18:50:23 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.1ms)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-10-20 18:50:23 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.2ms)
+Completed 200 OK in 23ms (Views: 15.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rooms/2" for ::1 at 2025-10-20 18:50:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/2"):
+  
+Started GET "/favicon.ico" for ::1 at 2025-10-20 18:50:29 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/recipes" for ::1 at 2025-10-20 18:50:35 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 7.1ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-10-20 18:50:38 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-10-20 18:50:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.1ms)
+Completed 200 OK in 10ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/users" for ::1 at 2025-10-20 18:52:02 -0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"tomas", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Registrarse"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'tomas@test.cl' LIMIT 1 /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "role") VALUES ('tomas@test.cl', '$2a$12$2J4Cu2aww02eljxEDh2d4ua7ETf8TN5x6YHroNZl2AeImD1FuH/Jq', NULL, NULL, NULL, '2025-10-20 21:52:02.443661', '2025-10-20 21:52:02.443661', 'tomas', 'regular') RETURNING "id" /*action='create',application='RecipeBook',controller='registrations'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*action='create',application='RecipeBook',controller='registrations'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 203ms (ActiveRecord: 4.6ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 18:52:02 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 5 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 6.4ms | ActiveRecord: 1.3ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2025-10-20 18:52:28 -0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 5 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 14ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 18:52:28 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 1.6ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-10-20 18:52:28 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 1.2ms)
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-10-20 18:52:29 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 18:52:29 -0300
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-10-20 18:52:29 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-10-20 18:52:38 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'pedro@test.cl' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 193ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 18:52:38 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.4ms)
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 1.1ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2025-10-20 18:52:41 -0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 9ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 18:52:41 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 4.6ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-10-20 18:52:41 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7382854294548907440) /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RecipeBook'*/[0m
+Migrating to AddRoleToUsers (20251020215606)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='RecipeBook'*/[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer DEFAULT 0 NOT NULL /*application='RecipeBook'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK /*application='RecipeBook'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7382854294548907440) /*application='RecipeBook'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7382854294548907440) /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RecipeBook'*/[0m
+Migrating to AddRoleToUsers (20251020215606)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251020215606') RETURNING "version" /*application='RecipeBook'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='RecipeBook'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7382854294548907440) /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+  [1m[36mUser Count (3.5ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "users"."role" AS "users_role" FROM "users" GROUP BY "users"."role" /*application='RecipeBook'*/[0m
+  [1m[36mUser Pluck (0.5ms)[0m  [1m[34mSELECT DISTINCT "users"."role" FROM "users" /*application='RecipeBook'*/[0m
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7382854294548907440) /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='RecipeBook'*/[0m
+Migrating to MigrateRoleToInteger (20251020220604)
+  [1m[35m (6.6ms)[0m  [1m[35mALTER TABLE "users" ADD "role_tmp" integer DEFAULT 0 NOT NULL /*application='RecipeBook'*/[0m
+  [1m[35m (4.1ms)[0m  [1m[33mUPDATE users SET role_tmp = CASE WHEN trim(lower(coalesce(role, ''))) = 'admin' THEN 1 WHEN trim(lower(coalesce(role, ''))) = 'regular' THEN 0 WHEN coalesce(role, '') ~ '^[0-9]+$' THEN CAST(role AS integer) ELSE 0 END /*application='RecipeBook'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "role" /*application='RecipeBook'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" RENAME COLUMN "role_tmp" TO "role" /*application='RecipeBook'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "role" SET DEFAULT 0 /*application='RecipeBook'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "role" SET NOT NULL /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251020220604') RETURNING "version" /*application='RecipeBook'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7382854294548907440) /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+  [1m[36mUser Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) AS "count_all", "users"."role" AS "users_role" FROM "users" GROUP BY "users"."role" /*application='RecipeBook'*/[0m
+  [1m[36mUser Load (25.9ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT 5 /*application='RecipeBook'*/[0m
+  [1m[36mUser Load (23.8ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT 5 /*application='RecipeBook'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@example.com' LIMIT 1 /*application='RecipeBook'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='RecipeBook'*/[0m
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@example.com' LIMIT 1 /*application='RecipeBook'*/[0m
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "role") VALUES ('admin@example.com', '$2a$12$M84RM2kNIefSgdOLVij1UO3GVqbKW5IUyOuM/U62E.aXaXIL4IeWO', NULL, NULL, NULL, '2025-10-20 22:25:28.134219', '2025-10-20 22:25:28.134219', 'Admin', 1) RETURNING "id" /*application='RecipeBook'*/[0m
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[35mCOMMIT /*application='RecipeBook'*/[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@example.com' LIMIT 1 /*application='RecipeBook'*/[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = 1 LIMIT 1 /*application='RecipeBook'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" != 1 ORDER BY "users"."id" ASC LIMIT 1 /*application='RecipeBook'*/[0m
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" != 1 ORDER BY "recipes"."id" ASC LIMIT 1 /*application='RecipeBook'*/[0m
+Started GET "/" for ::1 at 2025-10-20 19:30:24 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='RecipeBook'*/[0m
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 32.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 60.4ms | GC: 0.0ms)
+Completed 200 OK in 89ms (Views: 51.0ms | ActiveRecord: 12.0ms (3 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-10-20 19:30:31 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 19.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2025-10-20 19:30:33 -0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-10-20 19:30:44 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@example.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 211ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 19:30:45 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 4.6ms | ActiveRecord: 1.3ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/recipes/3" for ::1 at 2025-10-20 19:30:47 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.7ms | GC: 0.0ms)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 41.2ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | GC: 1.5ms)
+Completed 200 OK in 68ms (Views: 40.5ms | ActiveRecord: 4.6ms (4 queries, 0 cached) | GC: 11.0ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 19:30:49 -0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.3ms)
+Completed 200 OK in 15ms (Views: 4.4ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 19:30:49 -0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.1ms)
+Completed 200 OK in 16ms (Views: 4.9ms | ActiveRecord: 1.9ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/recipes/3/edit" for ::1 at 2025-10-20 19:30:50 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/_form.html.erb:30
+  Rendered recipes/_form.html.erb (Duration: 7.3ms | GC: 0.0ms)
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 8.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 9.2ms | ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/recipes/3" for ::1 at 2025-10-20 19:30:51 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | GC: 0.0ms)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 4.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.3ms)
+Completed 200 OK in 16ms (Views: 5.2ms | ActiveRecord: 1.1ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 19:30:53 -0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.3ms)
+Completed 200 OK in 17ms (Views: 5.3ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2025-10-20 19:31:04 -0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 63ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 36.2ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 19:31:04 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.7ms)
+Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-10-20 19:31:05 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.2ms)
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-10-20 19:31:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-10-20 19:31:11 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'pedro@test.cl' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 233ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 19:31:11 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.2ms)
+Completed 200 OK in 18ms (Views: 5.0ms | ActiveRecord: 1.4ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/recipes/3" for ::1 at 2025-10-20 19:31:12 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | GC: 0.0ms)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 4.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.2ms)
+Completed 200 OK in 17ms (Views: 5.0ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/recipes/3" for ::1 at 2025-10-20 19:31:14 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | GC: 0.0ms)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 4.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.1ms)
+Completed 200 OK in 17ms (Views: 5.1ms | ActiveRecord: 1.6ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/recipes" for ::1 at 2025-10-20 19:31:16 -0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 6.0ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/recipes/new" for ::1 at 2025-10-20 19:31:23 -0300
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 2.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.3ms)
+Completed 200 OK in 26ms (Views: 4.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/recipes/new" for ::1 at 2025-10-20 19:31:25 -0300
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.0ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/recipes/new" for ::1 at 2025-10-20 19:31:30 -0300
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='new',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/recipes/edit" for ::1 at 2025-10-20 19:31:35 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = NULL LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+Completed 404 Not Found in 8ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'="edit"):
+  
+activerecord (8.0.3) lib/active_record/core.rb:280:in `find'
+cancancan (3.6.1) lib/cancan/model_adapters/abstract_adapter.rb:24:in `find'
+cancancan (3.6.1) lib/cancan/controller_resource_finder.rb:13:in `find_resource'
+cancancan (3.6.1) lib/cancan/controller_resource_loader.rb:110:in `load_resource_instance'
+cancancan (3.6.1) lib/cancan/controller_resource_loader.rb:18:in `load_resource'
+cancancan (3.6.1) lib/cancan/controller_resource.rb:33:in `load_and_authorize_resource'
+cancancan (3.6.1) lib/cancan/controller_resource.rb:17:in `block in add_before_action'
+activesupport (8.0.3) lib/active_support/callbacks.rb:428:in `instance_exec'
+activesupport (8.0.3) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (8.0.3) lib/active_support/callbacks.rb:178:in `block in call'
+actionpack (8.0.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (8.0.3) lib/active_support/callbacks.rb:179:in `call'
+activesupport (8.0.3) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (8.0.3) lib/active_support/callbacks.rb:559:in `each'
+activesupport (8.0.3) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (8.0.3) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.17) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.17) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (8.0.3) lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+actiontext (8.0.3) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (8.0.3) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (8.0.3) lib/active_support/callbacks.rb:129:in `instance_exec'
+activesupport (8.0.3) lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+activesupport (8.0.3) lib/active_support/callbacks.rb:140:in `run_callbacks'
+actionpack (8.0.3) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (8.0.3) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (8.0.3) lib/action_controller/metal/instrumentation.rb:76:in `block in process_action'
+activesupport (8.0.3) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (8.0.3) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (8.0.3) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (8.0.3) lib/action_controller/metal/instrumentation.rb:75:in `process_action'
+actionpack (8.0.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (8.0.3) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (8.0.3) lib/abstract_controller/base.rb:152:in `process'
+actionview (8.0.3) lib/action_view/rendering.rb:40:in `process'
+actionpack (8.0.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.0.3) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.0.3) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (8.0.3) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.3) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.3) lib/rails/engine/lazy_route_set.rb:60:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.2.1) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.2.1) lib/rack/etag.rb:29:in `call'
+rack (3.2.1) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.1) lib/rack/head.rb:15:in `call'
+actionpack (8.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.3) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.3) lib/active_record/migration.rb:670:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.3) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.1) lib/rack/method_override.rb:28:in `call'
+rack (3.2.1) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.1) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.3) lib/rails/engine.rb:535:in `call'
+puma (7.0.4) lib/puma/configuration.rb:299:in `call'
+puma (7.0.4) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.0.4) lib/puma/thread_pool.rb:346:in `with_force_shutdown'
+puma (7.0.4) lib/puma/request.rb:100:in `handle_request'
+puma (7.0.4) lib/puma/server.rb:506:in `process_client'
+puma (7.0.4) lib/puma/server.rb:265:in `block in run'
+puma (7.0.4) lib/puma/thread_pool.rb:173:in `block in spawn_thread'
+Started GET "/recipes/3" for ::1 at 2025-10-20 19:31:39 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | GC: 0.0ms)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 4.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.2ms)
+Completed 200 OK in 16ms (Views: 4.8ms | ActiveRecord: 1.6ms (4 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/recipes/2" for ::1 at 2025-10-20 19:31:41 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+Completed 404 Not Found in 10ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'="2"):
+  
+activerecord (8.0.3) lib/active_record/core.rb:280:in `find'
+cancancan (3.6.1) lib/cancan/model_adapters/abstract_adapter.rb:24:in `find'
+cancancan (3.6.1) lib/cancan/controller_resource_finder.rb:13:in `find_resource'
+cancancan (3.6.1) lib/cancan/controller_resource_loader.rb:110:in `load_resource_instance'
+cancancan (3.6.1) lib/cancan/controller_resource_loader.rb:18:in `load_resource'
+cancancan (3.6.1) lib/cancan/controller_resource.rb:33:in `load_and_authorize_resource'
+cancancan (3.6.1) lib/cancan/controller_resource.rb:17:in `block in add_before_action'
+activesupport (8.0.3) lib/active_support/callbacks.rb:428:in `instance_exec'
+activesupport (8.0.3) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (8.0.3) lib/active_support/callbacks.rb:178:in `block in call'
+actionpack (8.0.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (8.0.3) lib/active_support/callbacks.rb:179:in `call'
+activesupport (8.0.3) lib/active_support/callbacks.rb:559:in `block in invoke_before'
+activesupport (8.0.3) lib/active_support/callbacks.rb:559:in `each'
+activesupport (8.0.3) lib/active_support/callbacks.rb:559:in `invoke_before'
+activesupport (8.0.3) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+turbo-rails (2.0.17) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.17) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (8.0.3) lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+actiontext (8.0.3) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (8.0.3) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (8.0.3) lib/active_support/callbacks.rb:129:in `instance_exec'
+activesupport (8.0.3) lib/active_support/callbacks.rb:129:in `block in run_callbacks'
+activesupport (8.0.3) lib/active_support/callbacks.rb:140:in `run_callbacks'
+actionpack (8.0.3) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (8.0.3) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (8.0.3) lib/action_controller/metal/instrumentation.rb:76:in `block in process_action'
+activesupport (8.0.3) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (8.0.3) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (8.0.3) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (8.0.3) lib/action_controller/metal/instrumentation.rb:75:in `process_action'
+actionpack (8.0.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (8.0.3) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (8.0.3) lib/abstract_controller/base.rb:152:in `process'
+actionview (8.0.3) lib/action_view/rendering.rb:40:in `process'
+actionpack (8.0.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.0.3) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.0.3) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (8.0.3) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.3) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.3) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.3) lib/rails/engine/lazy_route_set.rb:60:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.2.1) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.2.1) lib/rack/etag.rb:29:in `call'
+rack (3.2.1) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.1) lib/rack/head.rb:15:in `call'
+actionpack (8.0.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.3) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.3) lib/active_record/migration.rb:670:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.3) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.3) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.1) lib/rack/method_override.rb:28:in `call'
+rack (3.2.1) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/executor.rb:16:in `call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.1) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.3) lib/rails/engine.rb:535:in `call'
+puma (7.0.4) lib/puma/configuration.rb:299:in `call'
+puma (7.0.4) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.0.4) lib/puma/thread_pool.rb:346:in `with_force_shutdown'
+puma (7.0.4) lib/puma/request.rb:100:in `handle_request'
+puma (7.0.4) lib/puma/server.rb:506:in `process_client'
+puma (7.0.4) lib/puma/server.rb:265:in `block in run'
+puma (7.0.4) lib/puma/thread_pool.rb:173:in `block in spawn_thread'
+Started GET "/recipes" for ::1 at 2025-10-20 19:31:45 -0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 3.8ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.3ms)
+Completed 200 OK in 15ms (Views: 4.2ms | ActiveRecord: 1.2ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2025-10-20 19:32:11 -0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 4 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 12ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 19:32:11 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.2ms)
+Completed 200 OK in 17ms (Views: 5.7ms | ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-10-20 19:32:11 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-10-20 19:32:12 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-10-20 19:32:16 -0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'hola@test.com' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='RecipeBook',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 193ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for ::1 at 2025-10-20 19:32:17 -0300
+Processing by RecipesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:8
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='index',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/index.html.erb:16
+  Rendered recipes/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 4.2ms | ActiveRecord: 1.1ms (4 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/recipes/3/edit" for ::1 at 2025-10-20 19:32:20 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/_form.html.erb:30
+  Rendered recipes/_form.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.1ms)
+Completed 200 OK in 18ms (Views: 4.1ms | ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/recipes/3/edit" for ::1 at 2025-10-20 19:32:21 -0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='edit',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/_form.html.erb:30
+  Rendered recipes/_form.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 4.3ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/recipes/3" for ::1 at 2025-10-20 19:32:22 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = 3 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 3 AND "action_text_rich_texts"."record_type" = 'Recipe' AND "action_text_rich_texts"."name" = 'instructions' LIMIT 1 /*action='show',application='RecipeBook',controller='recipes'*/[0m
+  ↳ app/views/recipes/show.html.erb:31
+  Rendered /home/franc/.rbenv/versions/3.2.0/lib/ruby/gems/3.2.0/gems/actiontext-8.0.3/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.6ms | GC: 0.7ms)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 6.0ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.7ms)
+Completed 200 OK in 22ms (Views: 7.7ms | ActiveRecord: 1.4ms (4 queries, 0 cached) | GC: 1.1ms)
+
+
