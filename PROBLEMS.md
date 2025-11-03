@@ -1,0 +1,4 @@
+The card has insufficient funds to complete the purchase. Please contact your card issuer for more information.
+
+
+I would like to inform you that I was unable to complete Lab 10 due to an issue with DigitalOcean that occurred last Friday and today. When attempting to use the referral link for the provided credit, the platform would not allow me to add a payment method for validation, displaying the error: "The card has insufficient funds to complete the purchase. Please contact your card issuer for more information." I was unable to resolve this problem, even though my card has sufficient funds. I have completed all local preparation work, including ensuring my application runs correctly in development and setting up the necessary Docker configuration, but unfortunately I could not proceed with the deployment phase due to this issue that is beyond my control.
